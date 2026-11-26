@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A6P 手帐样机</title>
+<link rel="stylesheet" href="style.css">
+<script src="app.js" defer></script>
+</head>
+<body>
+<header><h1>A6P 手帐样机</h1><button id="export" disabled>下载当前跨页</button></header>
+<main>
+<section class="viewer" aria-label="手帐预览">
+  <div id="stage">
+    <canvas id="book" width="1440" height="1120" role="img" aria-label="摊开的六环手帐"></canvas>
+    <div id="leaf" hidden><canvas width="622" height="1000"></canvas><canvas width="622" height="1000"></canvas></div>
+  </div>
+  <nav aria-label="翻页">
+    <button id="prev" disabled>← 上一跨页</button>
+    <output id="position" aria-live="polite">等待导入</output>
+    <button id="next" disabled>下一跨页 →</button>
+  </nav>
+</section>
+<aside>
+  <h2>内页图片 <span id="count">0 页</span></h2>
+  <label id="drop">＋ 导入图片
+    <small>可多选，也可拖入图片</small>
+    <input id="files" type="file" accept="image/*" multiple>
+  </label>
+  <p id="status" role="status"></p>
+  <ol id="pages" aria-label="内页顺序"></ol>
+</aside>
+</main>
+</body>
+</html>
